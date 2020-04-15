@@ -25,9 +25,9 @@ const NotificationCenterStyle = styled.div`
 const ManageNotifications = styled.div`
     width: 100%;
     text-align: right;
-    cursor: pointer;
 
-    &:hover {
+    & > span:hover {
+        cursor: pointer;
         color: wheat;
     }
 `;
@@ -46,10 +46,10 @@ const NotificationCenterNotificationsStyle = styled.div`
 const Handlers = styled.div`
     display: flex;
     place-content: space-between;
-    cursor: pointer;
     margin-bottom: 15px;
 
-    &:hover {
+    & > div:hover {
+        cursor: pointer;
         color: wheat;
     }
 `;
@@ -66,7 +66,6 @@ const ControlsStyle = styled.div`
 
 const Control = styled.div`
     background: rgba(255, 255, 255, .2);
-
     display: flex;
     flex-direction: column;
     place-content: space-between;

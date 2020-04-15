@@ -1,25 +1,19 @@
 import React from 'react';
 import { ControlsStyle, Control } from '../styles/NotificationCenterStyles';
 
-export default function() {
+export default function({ expanded }) {
+    const controls = ['Bluetooth', 'Wi-Fi', 'Battery', 'All Settings', 'Screen Snippet', 'Update', 'Whatever'];
+ 
     return (
         <ControlsStyle>
-            <Control>
-                <span>ICON</span>
-                <span>Bluetooth</span>
-            </Control>
-            <Control>
-                <span>ICON</span>
-                <span>Bluetooth</span>
-            </Control>
-            <Control>
-                <span>ICON</span>
-                <span>Bluetooth</span>
-            </Control>
-            <Control>
-                <span>ICON</span>
-                <span>Bluetooth</span>
-            </Control>
+            {controls
+                .slice(0, expanded ? controls.length-1 : 4)
+                .map(control => (
+                <Control>
+                    <span>ICON</span>
+                    <span>{control}</span>
+                </Control>
+            ))}
         </ControlsStyle>
     );
 }

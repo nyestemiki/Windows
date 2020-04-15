@@ -5,16 +5,21 @@ import NCcontrols from './NCcontrols';
 
 export default function({ active }) {
     const [notifications] = useState([]);
+    const [controlsExpanded, setControlsExpanded] = useState(false);
+
+    function toggleControlExpansion() {
+        setControlsExpanded(!controlsExpanded);
+    }
 
     return (
         <NotificationCenterStyle active={active}>
-            <ManageNotifications>Manage Notifications</ManageNotifications>
+            <ManageNotifications><span>Manage Notifications</span></ManageNotifications>
             <NCnotifications notifications={notifications}/>
             <Handlers>
-                <Handler>Expand</Handler>
+                <Handler onClick={toggleControlExpansion}>Expand</Handler>
                 <Handler hide={!notifications.length}>Clear all notifications</Handler>
             </Handlers>
-            <NCcontrols/>
+            <NCcontrols expanded={controlsExpanded}/>
         </NotificationCenterStyle>
     )
 }
