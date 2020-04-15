@@ -4,7 +4,7 @@ import Icon from './Icon';
 import IconStyle from './styles/IconStyles';
 import Clock from './Clock';
 
-export default function() {
+export default function({ toggle }) {
     const [ theme ] = useState('dark');
 
     return (
@@ -27,7 +27,7 @@ export default function() {
                 <IconStyle iconTitle="Thursday, April 16, 2020" wide>
                     <Clock theme={theme}/>
                 </IconStyle>
-                <Icon name="notifications" iconTitle="No new notifications" theme={theme}/>
+                <Icon name="notifications" iconTitle="No new notifications" theme={theme} onClickFunction={toggle}/>
                 <ShowDesktop theme={theme}/>
             </TaskbarRight>
         </TaskbarStyle>
