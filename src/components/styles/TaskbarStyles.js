@@ -16,18 +16,6 @@ const TaskbarStyle = styled.div`
 
 const TaskbarLeft = styled.div`
     display: flex;
-
-    & > * {
-        width: 5vh;
-        padding: 5px;
-    }
-
-    & > *:hover {
-        background: rgba(255, 255, 255, .2);
-    }
-`;
-
-const Start = styled.div`
 `;
 
 const TaskbarIcons = styled.div`
@@ -37,8 +25,17 @@ const TaskbarIcons = styled.div`
 `;
 
 const TaskbarRight = styled.div`
+    display: flex;
+`;
 
+const ShowDesktop = styled.div`
+    border-left: 1px solid rgba(255, 255, 255, .6);
+    width: 8px;
+
+    &:hover {
+        background: rgba(255, 255, 255, .2);
+    }
 `;
 
 export default TaskbarStyle;
-export { TaskbarLeft, Start, TaskbarIcons, TaskbarRight };
+export { TaskbarLeft, TaskbarIcons, TaskbarRight, ShowDesktop };

@@ -1,5 +1,7 @@
 ### Windows 10 with React
 
+#### Version 1909 (OS Build 18363.775)
+
 #### To Do
 - Taskbar
     - left
