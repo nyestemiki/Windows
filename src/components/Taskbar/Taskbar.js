@@ -3,13 +3,19 @@ import TaskbarStyle, { TaskbarLeft, TaskbarIcons, TaskbarRight, ShowDesktop } fr
 import Icon from '../Icon';
 import IconStyle from '../styles/IconStyles';
 import Clock from '../Clock';
+import TBmoreIcons from './TBmoreIcons';
 import TBvolume from './TBvolume';
 
 export default function({ toggle, darkTheme }) {
     const [volume, setVolume] = useState(false);
+    const [moreIcons, setMoreIcons] = useState(false);
 
     function toggleVolume() {
         setVolume(!volume);
+    }
+
+    function toggleMoreIcons() {
+        setMoreIcons(!moreIcons);
     }
 
     return (
@@ -25,18 +31,32 @@ export default function({ toggle, darkTheme }) {
             </TaskbarIcons>
             <TaskbarRight>
                 <Icon name="people" iconTitle="People" darkTheme={darkTheme}/>
-                <Icon name="upArrow" iconTitle="Show hidden icons" darkTheme={darkTheme}/>
-                <Icon name="sound" iconTitle="Speakers: 50%" darkTheme={darkTheme} onClickFunction={toggleVolume}/>
+                <Icon 
+                    name="upArrow" 
+                    iconTitle="Show hidden icons" 
+                    darkTheme={darkTheme}
+                    onClickFunction={toggleMoreIcons}>
+                    <TBmoreIcons active={moreIcons} darkTheme={darkTheme}/>
+                </Icon>
+                <Icon 
+                    name="sound" 
+                    iconTitle="Speakers: 50%" 
+                    darkTheme={darkTheme} 
+                    onClickFunction={toggleVolume}>
+                    <TBvolume active={volume} darkTheme={darkTheme}/>
+                </Icon>
                 <Icon name="ink" iconTitle="Windows Ink Workspace" darkTheme={darkTheme}/>
                 <Icon name="keyboard" iconTitle="Touch keyboard" darkTheme={darkTheme}/>
                 <IconStyle iconTitle="Thursday, April 16, 2020" wide>
                     <Clock darkTheme={darkTheme}/>
                 </IconStyle>
-                <Icon name="notifications" iconTitle="No new notifications" darkTheme={darkTheme} onClickFunction={toggle}/>
+                <Icon 
+                    name="notifications" 
+                    iconTitle="No new notifications" 
+                    darkTheme={darkTheme} 
+                    onClickFunction={toggle}/>
                 <ShowDesktop darkTheme={darkTheme}/>
             </TaskbarRight>
-
-            <TBvolume active={volume} darkTheme={darkTheme}/>
         </TaskbarStyle>
     )
 }

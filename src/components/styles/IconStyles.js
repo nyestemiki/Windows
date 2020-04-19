@@ -24,6 +24,7 @@ const IconStyle = styled.div`
         height: 100%;
     }
 
+    /* Tag */
     &::before {
         display: none;
         position: absolute;

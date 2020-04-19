@@ -1,6 +1,17 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ClockStyle from './styles/ClockStyles';
 
 export default function({ darkTheme }) {
-    return <ClockStyle darkTheme={darkTheme}>12:15 AM</ClockStyle>
+    const [time, setTime] = useState((new Date()).toLocaleTimeString());
+
+    useEffect(
+        () => {
+            setInterval(() => {
+                setTime((new Date()).toLocaleTimeString());
+            }, 500);
+        },
+        []
+    );
+
+    return <ClockStyle darkTheme={darkTheme}>{time}</ClockStyle>
 }

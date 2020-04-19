@@ -1,7 +1,7 @@
 import React from 'react';
 import IconStyle from './styles/IconStyles';
 
-export default function({ name, iconTitle, darkTheme, app, onClickFunction }) {
+export default function({ name, iconTitle, darkTheme, app, onClickFunction, children }) {
     let title = name;
     
     if (!app) {
@@ -13,6 +13,7 @@ export default function({ name, iconTitle, darkTheme, app, onClickFunction }) {
     return (
         <IconStyle iconTitle={iconTitle}>
             <img alt={name} src={`/images/icons/${title}`} onClick={onClickFunction}/>
+            {children}
         </IconStyle>
     )
 }

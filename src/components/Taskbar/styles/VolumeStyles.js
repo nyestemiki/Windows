@@ -5,7 +5,6 @@ const VolumeStyle = styled.div`
     flex-direction: column;
     position: absolute;
     bottom: 100%;
-    right: 0;
     padding: 15px;
     background: ${p => p.darkTheme ? 'rgba(0, 0, 0, .5)' : 'rgba(255, 255, 255, .35)' };
 `;
@@ -29,7 +28,7 @@ const Speaker = styled.div`
     /* Tag */
     &::before {
         display: block;
-        content: 'Toggle Mute';
+        content: "Toggle Mute";
         position: absolute;
         bottom: 100%;
         left: 0;
@@ -37,6 +36,14 @@ const Speaker = styled.div`
         height: 20px;
         background: rgba(0, 0, 0, .5);
         z-index: 100;
+        padding: 3px 6px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-align: center;
+        border: 1px solid grey;
+        box-shadow: 3px 3px 4px rgba(0, 0, 0, .35);
+        font-size: .8rem;
+        font-weight: 100;
     }
 `;
 
