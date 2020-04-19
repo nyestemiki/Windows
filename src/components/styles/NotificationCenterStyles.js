@@ -64,8 +64,8 @@ const ControlsStyle = styled.div`
     grid-gap: 5px;
 `;
 
-const Control = styled.div`
-    background: rgba(255, 255, 255, .2);
+const ControlStyle = styled.div`
+    background: ${p => p.active ? 'rgba(255, 0, 0, .7)' : 'rgba(255, 255, 255, .2)'};
     display: flex;
     flex-direction: column;
     place-content: space-between;
@@ -76,12 +76,19 @@ const Control = styled.div`
     border: 1px solid transparent;
     font-size: .8rem;
     cursor: pointer;
+    transition: background .35s;
+    position: relative;
+
+    & img {
+        height: 15px;
+        width: 15px;    
+    }
 
     &:hover {
         border: 1px solid wheat;
-        background: rgba(255, 255, 255, .3);
+        background: ${p => p.active ? 'rgba(255, 0, 0, 1)' : 'rgba(255, 255, 255, .35)'};
     }
 `;
 
 export default NotificationCenterStyle;
-export { ManageNotifications, NotificationCenterNotificationsStyle, Handlers, Handler, ControlsStyle, Control };
+export { ManageNotifications, NotificationCenterNotificationsStyle, Handlers, Handler, ControlsStyle, ControlStyle };

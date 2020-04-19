@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import TaskbarStyle, { TaskbarLeft, TaskbarIcons, TaskbarRight, ShowDesktop } from './styles/TaskbarStyles';
 import Icon from './Icon';
 import IconStyle from './styles/IconStyles';
 import Clock from './Clock';
 
-export default function({ toggle }) {
-    const [ theme ] = useState('dark');
-
+export default function({ toggle, theme }) {
     return (
         <TaskbarStyle>
             <TaskbarLeft>

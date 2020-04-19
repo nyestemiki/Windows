@@ -3,7 +3,7 @@ import NotificationCenterStyle, { ManageNotifications, Handlers, Handler } from 
 import NCnotifications from './NCnotifications';
 import NCcontrols from './NCcontrols';
 
-export default function({ active }) {
+export default function({ active, theme }) {
     const [notifications] = useState([]);
     const [controlsExpanded, setControlsExpanded] = useState(false);
 
@@ -19,7 +19,7 @@ export default function({ active }) {
                 <Handler onClick={toggleControlExpansion}>Expand</Handler>
                 <Handler hide={!notifications.length}>Clear all notifications</Handler>
             </Handlers>
-            <NCcontrols expanded={controlsExpanded}/>
+            <NCcontrols theme={theme} expanded={controlsExpanded}/>
         </NotificationCenterStyle>
     )
 }
