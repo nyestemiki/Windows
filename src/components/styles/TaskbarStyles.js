@@ -6,7 +6,7 @@ const TaskbarStyle = styled.div`
     left: 0;
     height: 5vh;
     width: 100vw;
-    background: rgba(0, 0, 0, .5);
+    background: ${p => p.darkTheme ? 'rgba(0, 0, 0, .5)' : 'rgba(255, 255, 255, .35)'};
     backdrop-filter: blur(15px);
     cursor: default;
     color: white;

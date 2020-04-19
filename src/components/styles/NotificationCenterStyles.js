@@ -12,7 +12,7 @@ const NotificationCenterStyle = styled.div`
     display: ${p => p.active ? 'flex' : 'none'};
     position: absolute;
     right: 0;
-    background: rgba(0, 0, 0, .6);
+    background: ${p => p.darkTheme ? 'rgba(0, 0, 0, .6)' : 'rgba(255, 255, 255, .35)'};
     backdrop-filter: blur(15px);
     width: 400px;
     height: 95vh;

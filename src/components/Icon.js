@@ -1,15 +1,11 @@
 import React from 'react';
 import IconStyle from './styles/IconStyles';
 
-export default function({ name, iconTitle, theme, app, onClickFunction }) {
+export default function({ name, iconTitle, darkTheme, app, onClickFunction }) {
     let title = name;
     
     if (!app) {
-        if (theme === 'dark') {
-            title += '_white';
-        } else if (theme === 'white') {
-            title += '_black';
-        }
+        title += darkTheme ? '_white' : '_black';
     }
 
     title += '.png';

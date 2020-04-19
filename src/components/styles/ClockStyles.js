@@ -8,7 +8,7 @@ const ClockStyle = styled.div`
     overflow: hidden;
     white-space: nowrap;
 
-    color: ${p => p.theme === 'light' ? 'black' : 'white'};
+    color: ${p => p.darkTheme ? 'white' : 'black'};
 `;
 
 export default ClockStyle;
