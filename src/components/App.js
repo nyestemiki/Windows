@@ -31,7 +31,7 @@ export default function() {
           toggleDarkTheme,
           toggleNightLight
         }}/>
-      <Taskbar toggle={toggleNotificationCenter} darkTheme={darkTheme}/>
+      <Taskbar toggle={toggleNotificationCenter} darkTheme={darkTheme} functions={{setNotificaionCenter}}/>
     </AppStyle>
   );
 }

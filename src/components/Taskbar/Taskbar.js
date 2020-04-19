@@ -6,7 +6,7 @@ import Clock from '../Clock';
 import TBmoreIcons from './TBmoreIcons';
 import TBvolume from './TBvolume';
 
-export default function({ toggle, darkTheme }) {
+export default function({ toggle, darkTheme, functions }) {
     const [volume, setVolume] = useState(false);
     const [moreIcons, setMoreIcons] = useState(false);
 
@@ -16,6 +16,12 @@ export default function({ toggle, darkTheme }) {
 
     function toggleMoreIcons() {
         setMoreIcons(!moreIcons);
+    }
+
+    function showDesktop() {
+        setVolume(false);
+        setMoreIcons(false);
+        functions.setNotificaionCenter(false);
     }
 
     return (
@@ -47,7 +53,7 @@ export default function({ toggle, darkTheme }) {
                 </Icon>
                 <Icon name="ink" iconTitle="Windows Ink Workspace" darkTheme={darkTheme}/>
                 <Icon name="keyboard" iconTitle="Touch keyboard" darkTheme={darkTheme}/>
-                <IconStyle iconTitle="Thursday, April 16, 2020" wide>
+                <IconStyle iconTitle={(new Date().toDateString())} wide>
                     <Clock darkTheme={darkTheme}/>
                 </IconStyle>
                 <Icon 
@@ -55,7 +61,7 @@ export default function({ toggle, darkTheme }) {
                     iconTitle="No new notifications" 
                     darkTheme={darkTheme} 
                     onClickFunction={toggle}/>
-                <ShowDesktop darkTheme={darkTheme}/>
+                <ShowDesktop darkTheme={darkTheme} onClick={showDesktop}/>
             </TaskbarRight>
         </TaskbarStyle>
     )

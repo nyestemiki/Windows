@@ -9,6 +9,7 @@ const MoreIconsStyle = styled.div`
     bottom: 100%;
     padding: 15px;
     background: ${p => p.darkTheme ? 'rgba(0, 0, 0, .5)' : 'rgba(255, 255, 255, .35)' };
+    backdrop-filter: blur(15px);
 `;
 
 export default function(props) {
