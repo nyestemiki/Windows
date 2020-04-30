@@ -9,6 +9,8 @@ export default function({ active, darkTheme, functions }) {
 
     function toggleControlExpansion() {
         setControlsExpanded(!controlsExpanded);
+
+        document.querySelector("#expandedBtn").textContent = controlsExpanded ? 'Expand' : 'Collapse';
     }
 
     return (
@@ -16,7 +18,7 @@ export default function({ active, darkTheme, functions }) {
             <ManageNotifications><span>Manage Notifications</span></ManageNotifications>
             <NCnotifications notifications={notifications}/>
             <Handlers>
-                <Handler onClick={toggleControlExpansion}>Expand</Handler>
+                <Handler onClick={toggleControlExpansion} id="expandedBtn">Expand</Handler>
                 <Handler hide={!notifications.length}>Clear all notifications</Handler>
             </Handlers>
             <NCcontrols darkTheme={darkTheme} expanded={controlsExpanded} functions={functions}/>
